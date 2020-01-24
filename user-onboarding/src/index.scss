@@ -32,6 +32,7 @@ body {
   line-height: 1.5;
   letter-spacing: 1.5;
   font-family: sans-serif;
+  background-color: aqua;
 }
 ol, ul {
 	list-style: none;
@@ -52,5 +53,79 @@ table {
 // UserForm //
 
 .container{
-  border: 1px solid black;
-}
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 50%;
+
+  form{
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding: 2%;
+    border-radius: 5px;
+    background-color: white;
+
+    label{
+      text-align: left;
+      display: block;
+      // border: 1px solid blue;
+      width: 27%;
+      margin-bottom: 2%;
+      font-size: 1.3rem;
+    }
+
+    .email{
+      margin-bottom: 5%;
+    }
+
+    .input{
+      padding: 3%;
+      border-radius: 1px;
+      font-size: 1rem;
+    }
+    .password{
+      width: 30%;
+      margin-bottom: 5%;
+    }
+
+    h2{
+      // border: 1px solid yellow;
+      font-size: 1.5rem;
+      text-align: left;
+      margin-bottom: 3%;
+    }
+    
+    p{
+      font-size: 1.1rem;
+    }
+
+    .agreement{
+      margin-left: 35%;
+      margin-top: 1%;
+      margin-bottom: 1%;
+      width: 30%;
+      // border: 4px solid rgb(197, 197, 165);
+
+      .check-box{
+        cursor: pointer;
+      }
+    }
+
+    .btn{
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1%;
+
+      Button{
+        width: 15%;
+        cursor: pointer;
+        padding: 1%;
+        border-radius: 5px;
+      }
+    }
+
+  } // form
+
+} // container
