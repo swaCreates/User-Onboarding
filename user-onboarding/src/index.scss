@@ -66,6 +66,7 @@ table {
     padding: 2%;
     border-radius: 5px;
     background-color: white;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.7);
 
     label{
       text-align: left;
@@ -95,6 +96,7 @@ table {
       font-size: 1.5rem;
       text-align: left;
       margin-bottom: 3%;
+      font-weight: 600;
     }
     
     p{
@@ -111,6 +113,7 @@ table {
       .check-box{
         cursor: pointer;
       }
+
     }
 
     .btn{
@@ -120,11 +123,21 @@ table {
 
       Button{
         width: 15%;
+        font-size: 1rem;
+        color: white;
+        background-color: skyblue;
         cursor: pointer;
         padding: 1%;
         border-radius: 5px;
+        box-shadow: 0px 7px 13px rgba(0, 0, 0, 0.1);
       }
-    }
+
+      Button:hover{
+        opacity: 0.5;
+        box-shadow: 0px 7px 13px rgba(0, 0, 0, 0.2);
+      }
+
+    } // .btn
 
   } // form
 
