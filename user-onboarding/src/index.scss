@@ -72,7 +72,7 @@ table {
       text-align: left;
       display: block;
       // border: 1px solid blue;
-      width: 27%;
+      width: 50%;
       margin-bottom: 2%;
       font-size: 1.3rem;
     }
@@ -85,11 +85,20 @@ table {
       padding: 3%;
       border-radius: 1px;
       font-size: 1rem;
+      width: 100%;
     }
     .password{
       width: 30%;
       margin-bottom: 5%;
+      width: 45%;
     }
+
+    .errors{
+      color: red;
+      font-size: 0.8rem;
+    }
+
+  
 
     h2{
       // border: 1px solid yellow;
@@ -135,6 +144,7 @@ table {
       Button:hover{
         opacity: 0.5;
         box-shadow: 0px 7px 13px rgba(0, 0, 0, 0.2);
+        font-size: 1.1rem;
       }
 
     } // .btn
