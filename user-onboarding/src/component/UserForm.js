@@ -119,7 +119,7 @@ function UserForm({values, errors, touched, status}) {
                 <h2>Terms Of Agreement</h2>
                 <p>You must adhere to all terms on this form.</p>
                 <label className='agreement' htmlFor='agreement'>
-                    Agree to Terms
+                    Terms of Service
 
                     <Field 
                     className='check-box'
@@ -131,9 +131,9 @@ function UserForm({values, errors, touched, status}) {
 
                     <span className="checkmark" />
 
-                    {/* {touched.agreement && errors.agreement && (
+                    {touched.agreement && errors.agreement && (
                     <p className="errors">{errors.agreement}</p>
-                    )} */}
+                    )}
 
                 </label>
 
@@ -145,11 +145,13 @@ function UserForm({values, errors, touched, status}) {
 
             {info.map(userInfo => {
                 return (
-                    <ul key={userInfo.id}>
-                        <li>First Name: {userInfo.firstname}</li>
-                        <li>Last Name: {userInfo.lastname}</li>
-                        <li>Email Address: {userInfo.email}</li>
-                    </ul>
+                    <div key={userInfo.id} className='userCard'>
+                        <ul>
+                            <li>First Name: {userInfo.firstname}</li>
+                            <li>Last Name: {userInfo.lastname}</li>
+                            <li>Email Address: {userInfo.email}</li>
+                        </ul>
+                    </div>
                 );
             })}
 
@@ -164,7 +166,7 @@ const FormikForm= withFormik({mapPropsToValues(props){
             lastname: props.lastname || '',
             email: props.email || '',
             password: props.password || '',
-            agreement: props.agreement || '',
+            agreement: props.agreement || false,
         }
     },
 
@@ -173,9 +175,12 @@ const FormikForm= withFormik({mapPropsToValues(props){
     validationSchema: Yup.object().shape({
         firstname: Yup.string().required('Please enter your first name'),
         lastname: Yup.string().required("Please enter your last name"),
-        email: Yup.string().required('Please enter your email'),
-        password: Yup.string().required('Please create a password'),
-        agreement: Yup.boolean(),
+        email: Yup.string().email().required('Please enter your email'),
+        password: Yup.string().required('No password provided.') 
+        .min(8, 'Password is too short - should be 8 characters minimum.'),
+        agreement: Yup.boolean().required( "Must accept Terms of Service.")
+        .oneOf([true], "Must accept Terms of Service.")
+        
     }),
 
     handleSubmit(values, { setStatus, resetForm }) {

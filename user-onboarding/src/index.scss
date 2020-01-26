@@ -56,7 +56,17 @@ table {
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  width: 50%;
+  width: 70%;
+
+  .userCard{
+    text-align: center;
+    width: 50%;
+    height: 100px;
+    margin-left: 1%;
+    margin-top: 1%;
+    border-radius: 3px;
+    background-color: white;
+  }
 
   form{
     width: 95%;
@@ -116,7 +126,7 @@ table {
       margin-left: 35%;
       margin-top: 1%;
       margin-bottom: 1%;
-      width: 30%;
+      width: 40%;
       // border: 4px solid rgb(197, 197, 165);
 
       .check-box{
